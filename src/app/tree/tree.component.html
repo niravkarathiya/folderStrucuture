@@ -1,0 +1,31 @@
+<div *ngFor="let folder of roots">
+    <ul>
+        <li>
+            <img src="../../assets/img/file-document-svgrepo-com.svg" class="icon" *ngIf="folder.type === 'file'">
+            <img src="../../assets/img/folder-svgrepo-com.svg" class="icon" *ngIf="folder.type === 'folder'">
+            {{folder.name}}
+            <img src="../../assets/img/plus-svgrepo-com.svg" alt="" class="icon" (click)="chooseFileFolder(folder.id)" *ngIf="folder.type === 'folder'">
+            <img src="../../assets/img/minus-svgrepo-com.svg" class="icon" (click)="deleteFolderFilde(folder.id)">
+        </li>
+        <li *ngIf="isFileFolder && folder.id === currentId">
+                <button (click)="openForm('file',folder.id)">File</button> 
+                <button (click)="openForm('folder',folder.id)"> Folder </button>
+        </li>
+        <li class="input-container" *ngIf="isFormVisible && folder.id === currentId">
+            <div>
+                <form [formGroup]="form">
+                    <input type="text" formControlName="name">
+                    <img src="../../assets/img/check-mark-circle-icon.svg" alt="" class="icon" (click)="this.form.valid && addChildren(folder.id)">
+                <img src="../../assets/img/close-round-line-icon.svg" alt="" class="icon" (click)="closeForm()">
+                </form>
+            </div>
+        </li>
+        <li>
+            <ul>
+                <li>
+                    <app-tree [roots]="folder?.children"></app-tree>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

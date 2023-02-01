@@ -1,0 +1,18 @@
+<div>
+    <div class="header">Folder Structure Maker</div>
+    <div>
+        <button class="btn-add-root" (click)="addRootFolder()">Add Root Folder</button>
+    </div>
+    <div class="input-container" *ngIf="isInputVisible">
+        <div>
+            <form [formGroup]="form">
+                <input type="text" formControlName="name">
+                <img src="../../assets/img/check-mark-circle-icon.svg" alt="" class="icon" (click)="this.form.valid && addToRoot()">
+                <img src="../../assets/img/close-round-line-icon.svg" alt="" class="icon" (click)="closeForm()">
+            </form>
+           
+        </div>
+    </div>
+</div>
+
+<app-tree [roots]="roots"></app-tree>

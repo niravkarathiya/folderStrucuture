@@ -1,0 +1,72 @@
+<app-home></app-home>
+<!-- <div class="header">Folder Structure</div>
+  <div class="content">
+    <div class="add-root">
+      <button (click)="rootClick()">Add Folder to Root</button>
+    </div>
+    <div>
+      <form action="" class="form" *ngIf="isFormFolderVisible" [formGroup]="folderForm">
+        <div>
+          <img src="../assets/img/folder-svgrepo-com.svg" class="folder-icon">
+        </div>
+        <div class="input-icon">
+          <input type="text" id="input" formControlName="name">
+          <img src="../assets/img/check-mark-circle-icon.svg" alt="" class="check-icon" (click)="checkFolderInput()">
+        </div>
+        <div>
+          <img src="../assets/img/close-round-line-icon.svg" alt="" class="cross-icon" (click)="closeFolderForm()">
+        </div>
+        <div class="errorMessage" *ngIf="isError">Folder Name is required</div>
+      </form>
+    </div>
+    <div>
+      <form action="" class="form" *ngIf="isChileFolderForm" [formGroup]="childFolderForm">
+        <div>
+          <img src="../assets/img/folder-svgrepo-com.svg" class="file-icon">
+        </div>
+        <div class="input-icon">
+          <input type="text" id="input"  formControlName="name">
+          <img src="../assets/img/check-mark-circle-icon.svg" alt="" class="check-icon" (click)="checkChildFolderInput()">
+        </div>
+        <div>
+          <img src="../assets/img/close-round-line-icon.svg" alt="" class="cross-icon" (click)="closeChildFolderForm()">
+        </div>
+        <div class="errorMessage" *ngIf="isError">Folder Name is required</div>
+      </form>
+    </div>
+    <div>
+      <form action="" class="form" *ngIf="isFileFormVisible" [formGroup]="fileForm">
+        <div>
+          <img src="../assets/img/file-document-svgrepo-com.svg" class="file-icon">
+        </div>
+        <div class="input-icon">
+          <input type="text" id="input"  formControlName="name">
+          <img src="../assets/img/check-mark-circle-icon.svg" alt="" class="check-icon" (click)="checkFileInput()">
+        </div>
+        <div>
+          <img src="../assets/img/close-round-line-icon.svg" alt="" class="cross-icon" (click)="closeFileForm()">
+        </div>
+        <div class="errorMessage" *ngIf="isError">File Name is required</div>
+      </form>
+    </div>
+    <ng-container *ngFor="let folder of rootFolder; let i = index;">
+      <li>
+        <div class="container">
+          <img src="../assets/img/folder-svgrepo-com.svg" class="folder-icon">{{folder}}
+          <img src="../assets/img/plus-svgrepo-com.svg" alt="add-folder/file" class="plus-icon" (click)="addFolderFile()">
+          <img src="../assets/img/minus-svgrepo-com.svg" alt="cancel" class="minus-icon" (click)="removeFolder(folder)">
+        </div>
+        <ng-container class="button-container" *ngIf="isButtonVisible"> 
+          <button (click)="openFileForm()">File</button>
+          <button (click)="childFolderClick()">Folder</button>
+        </ng-container>
+      </li>
+    </ng-container>
+  </div>
+<ng-container *ngFor="let subFolder of childFolder; let i=index;">
+  <li>
+    {{subFolder}}
+  </li>
+</ng-container>
+
+   -->

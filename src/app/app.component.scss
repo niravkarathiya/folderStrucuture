@@ -1,0 +1,71 @@
+.header {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    font-size: xx-large;
+    background-color: gray;
+    padding: 5px;
+}
+
+.content {
+    margin-top: 5px;
+}
+
+.form {
+    display: block;
+    border: 1px solid black;
+    width: fit-content;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.folder-icon {
+    height: 25px;
+    margin-right: 10px;
+    width: 20px;
+}
+.file-icon {
+    height: 25px;
+    margin-right: 10px;
+    width: 20px;
+}
+
+
+.cross-icon {
+    height: 35px;
+    margin-right: 10px;
+    width: 20px;
+}
+
+.check-icon {
+    height: 35px;
+    width: 20px;
+    padding-left: 5px;
+}
+.input-icon{
+    display: flex;
+}
+.errorMessage{
+    color: red;
+}
+.plus-icon{
+    height: 35px;
+    width: 20px;
+    padding-left: 5px;
+  
+
+}
+.minus-icon{
+    height: 35px;
+    width: 20px;
+    padding-left: 5px;
+  
+}
+.container{
+    margin-top: 10px;
+    display: flex;
+}
+.button-container{
+    display: flex;
+}
+
