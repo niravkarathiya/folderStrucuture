@@ -8,40 +8,41 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class TreeComponent {
 
+  @Input() roots: any[] = [];
   form = new FormGroup({
     name: new FormControl('', Validators.required),
   });
-  @Input() roots: any[] = [];
   isFormVisible = false;
   isFileFolder = false;
   type = '';
-  currentId : number = 0; 
+  currentId = 0;
 
-  chooseFileFolder(id:number){
+  chooseFileFolder(id: number) {
     this.isFileFolder = true;
     this.currentId = id;
   }
-  openForm(type:string, id:number){
-    this.isFormVisible=true;
+
+  openForm(type: string, id: number) {
+    this.isFormVisible = true;
     this.type = type;
     this.isFileFolder = false;
     this.currentId = id;
-
   }
-  addChildren(parentId:number){
-    let folder = this.roots.find(folder=>folder.id == parentId);
-    let child = {'id': Math.floor(1000 + Math.random() * 9000), 'name':this.form.controls.name.value, 'type':this.type, 'children':[]};
+
+  addChildren(parentId: number) {
+    let folder = this.roots.find(folder => folder.id == parentId);
+    let child = { 'id': Math.floor(1000 + Math.random() * 9000), 'name': this.form.controls.name.value, 'type': this.type, 'children': [] };
     folder.children.push(child);
-    this.isFormVisible=false;
+    this.isFormVisible = false;
     this.form.reset();
   }
 
-  deleteFolderFilde(parentId:number){
-    let folder = this.roots.findIndex(folder=>folder.id == parentId);
-    this.roots.splice(folder,1);
+  deleteFolderFile(parentId: number) {
+    let folder = this.roots.findIndex(folder => folder.id == parentId);
+    this.roots.splice(folder, 1);
   }
 
-  closeForm(){
+  closeForm() {
     this.isFormVisible = false;
     this.form.reset();
   }

@@ -11,19 +11,22 @@ export class HomeComponent {
   form = new FormGroup({
     name: new FormControl('', Validators.required),
   });
-  roots = new Array;
+  
+  roots: any[] = [];  
   isInputVisible = false;
-  addRootFolder(){
+
+  addRootFolder() {
     this.isInputVisible = true;
   }
-  addToRoot(){
-    const folder  = {'id': Math.floor(1000 + Math.random() * 9000), 'name': this.form.controls.name.value, 'type':'folder', 'children':[]}
+
+  addToRoot() {
+    const folder = { 'id': Math.floor(1000 + Math.random() * 9000), 'name': this.form.controls.name.value, 'type': 'folder', 'children': [] }
     this.roots.push(folder);
     this.form.reset();
-    this.isInputVisible=false;
+    this.isInputVisible = false;
   }
 
-  closeForm(){
+  closeForm() {
     this.isInputVisible = false;
     this.form.reset();
   }
